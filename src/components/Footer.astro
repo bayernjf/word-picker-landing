@@ -1,0 +1,49 @@
+---
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].footer;
+const year = new Date().getFullYear();
+const homePath = lang === 'zh' ? '/' : '/en';
+---
+
+<footer class="bg-slate-900 text-slate-400">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white font-bold">W</span>
+          <span class="text-white font-bold text-lg">WordPicker</span>
+        </div>
+        <p class="text-sm leading-relaxed max-w-md">{t.desc}</p>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold mb-4 text-sm">{t.links.product}</h3>
+        <ul class="space-y-3 text-sm">
+          <li><a href={`${homePath}#features`} class="hover:text-indigo-400 transition-colors">{ui[lang].nav.features}</a></li>
+          <li><a href={`${homePath}#how-it-works`} class="hover:text-indigo-400 transition-colors">{ui[lang].nav.howItWorks}</a></li>
+          <li><a href={`${homePath}#showcase`} class="hover:text-indigo-400 transition-colors">{ui[lang].nav.showcase}</a></li>
+          <li><a href={`${homePath}#download`} class="hover:text-indigo-400 transition-colors">{ui[lang].nav.download}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold mb-4 text-sm">{t.links.resources}</h3>
+        <ul class="space-y-3 text-sm">
+          <li><a href={`${homePath}#faq`} class="hover:text-indigo-400 transition-colors">{ui[lang].nav.faq}</a></li>
+          <li><a href="https://github.com/bayernjf/word-picker" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition-colors">GitHub</a></li>
+          <li><a href="https://word-base.pages.dev" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition-colors">WordBase</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-slate-800 text-center text-sm">
+      <p>© {year} {t.copyright}</p>
+    </div>
+  </div>
+</footer>

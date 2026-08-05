@@ -1,0 +1,48 @@
+---
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].download;
+---
+
+<section id="download" class="py-24 bg-gradient-to-br from-indigo-600 via-purple-700 to-slate-900 text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-purple-400 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-400 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">{t.title}</h2>
+    <p class="text-lg text-indigo-100 mb-12">{t.subtitle}</p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="#"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-indigo-700 font-semibold text-lg hover:bg-indigo-50 transition-colors shadow-lg"
+      >
+        <span class="text-2xl">🌐</span>
+        {t.chrome}
+      </a>
+      <a
+        href="#"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-lg hover:bg-white/20 transition-colors"
+      >
+        <span class="text-2xl">🧭</span>
+        {t.safari}
+      </a>
+      <a
+        href="https://github.com/bayernjf/word-picker"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-900/50 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg hover:bg-slate-900/70 transition-colors"
+      >
+        <span class="text-2xl">⭐</span>
+        {t.github}
+      </a>
+    </div>
+  </div>
+</section>
