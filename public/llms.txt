@@ -1,0 +1,40 @@
+# WordPicker
+
+WordPicker is a free browser extension (Chrome/Edge/Safari) for English learners. Hold a modifier key and hover over any English word to get instant definitions. Save words to WordBase cloud wordbook with SRS spaced repetition review.
+
+## Target Users
+- Chinese speakers learning English
+- Developers reading English documentation
+- Students reading academic papers in English
+- Anyone who wants to build vocabulary while browsing
+
+## Key Features
+- Hover lookup: Hold modifier key (Ctrl/Cmd/Alt/Shift) and hover over English words for instant definitions
+- WordBase cloud wordbook: Save words to cloud, sync across devices, never lose vocabulary
+- SRS spaced repetition: Smart review algorithm based on forgetting curve
+- AI definitions: Context-aware definitions powered by AI
+- Fireworks effect: Visual celebration when saving new words
+- Offline dictionary: Built-in ECDICT dictionary, works without internet
+- Cross-browser: Chrome, Edge, Safari support via Manifest V3
+- Completely free: No ads, no paid features
+
+## Technical Details
+- Built with TypeScript, Manifest V3, webextension-polyfill
+- Backend: Supabase Auth + WordBase API (Cloudflare Pages)
+- Offline dictionary: ECDICT
+- Translation: MyMemory + Youdao fallback
+- Open source: https://github.com/bayernjf/word-picker
+
+## Use Cases
+- Reading English documentation (MDN, Stack Overflow, GitHub)
+- Reading academic papers (arXiv, Google Scholar)
+- Code review on GitHub (hover over words in comments/docs)
+- Reading English news (BBC, Reuters)
+
+## Comparison
+- vs Saladict: WordPicker adds cloud wordbook, SRS review, AI definitions, Safari support
+- vs QuillBot: WordPicker adds hover lookup, offline dictionary, SRS review, completely free
+
+## Links
+- GitHub: https://github.com/bayernjf/word-picker
+- WordBase: https://word-base.pages.dev

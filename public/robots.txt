@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://word-picker-landing.pages.dev/sitemap-index.xml
