@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Lang;
+  keywords?: string;
+}
+
+const { title, description, lang, keywords } = Astro.props;
+
+const baseUrl = 'https://word-picker-landing.pages.dev';
+const path = Astro.url.pathname;
+const canonicalUrl = new URL(path, baseUrl).href;
+
+const altPaths = {
+  zh: new URL('/', baseUrl).href,
+  en: new URL('/en', baseUrl).href,
+};
+
+const faqItems = ui[lang].faq.items;
+
+const softwareAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'WordPicker',
+  description: description,
+  operatingSystem: 'Chrome, Edge, Safari',
+  applicationCategory: 'BrowserExtension',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  url: canonicalUrl,
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <link rel="canonical" href={canonicalUrl} />
+
+    <link rel="alternate" hreflang="zh" href={altPaths.zh} />
+    <link rel="alternate" hreflang="en" href={altPaths.en} />
+    <link rel="alternate" hreflang="x-default" href={altPaths.zh} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="WordPicker" />
+    <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+  <body class="bg-white text-slate-900 antialiased">
+    <slot />
+  </body>
+</html>
