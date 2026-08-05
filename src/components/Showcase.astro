@@ -1,0 +1,42 @@
+---
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].showcase;
+
+const gradients = [
+  'from-blue-500 to-indigo-600',
+  'from-purple-500 to-pink-600',
+  'from-emerald-500 to-teal-600',
+  'from-orange-500 to-red-600',
+];
+
+const emojis = ['📚', '📄', '💻', '📰'];
+---
+
+<section id="showcase" class="py-24 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t.title}</h2>
+      <p class="text-lg text-slate-600">{t.subtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {t.scenarios.map((scenario, i) => (
+        <div class="group relative overflow-hidden rounded-2xl bg-white border border-slate-200 hover:shadow-xl transition-all duration-300">
+          <div class={`h-32 bg-gradient-to-br ${gradients[i]} flex items-center justify-center text-6xl`}>
+            {emojis[i]}
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">{scenario.title}</h3>
+            <p class="text-slate-600 leading-relaxed">{scenario.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

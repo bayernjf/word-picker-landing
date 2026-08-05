@@ -1,0 +1,51 @@
+---
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].compare;
+---
+
+<section id="compare" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">{t.title}</h2>
+      <p class="text-lg text-slate-600">{t.subtitle}</p>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full max-w-4xl mx-auto border-collapse">
+        <thead>
+          <tr>
+            {t.headers.map((header, i) => (
+              <th
+                class={`px-4 py-4 text-left text-sm font-bold ${i === 1 ? 'bg-indigo-600 text-white rounded-t-xl' : 'bg-slate-100 text-slate-700'}`}
+              >
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {t.rows.map((row, i) => (
+            <tr class={i === t.rows.length - 1 ? '' : 'border-b border-slate-100'}>
+              <td class="px-4 py-4 text-sm font-medium text-slate-700">{row.feature}</td>
+              <td class="px-4 py-4 text-center text-sm bg-indigo-50 border-x border-indigo-100">
+                {row.wp ? <span class="text-indigo-600 text-lg font-bold">✓</span> : <span class="text-slate-300 text-lg">✗</span>}
+              </td>
+              <td class="px-4 py-4 text-center text-sm text-slate-600">
+                {row.competitor1 ? <span class="text-emerald-500 text-lg">✓</span> : <span class="text-slate-300 text-lg">✗</span>}
+              </td>
+              <td class="px-4 py-4 text-center text-sm text-slate-600">
+                {row.competitor2 ? <span class="text-emerald-500 text-lg">✓</span> : <span class="text-slate-300 text-lg">✗</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
