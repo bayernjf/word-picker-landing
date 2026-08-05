@@ -1,0 +1,61 @@
+---
+import { ui, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang].hero;
+---
+
+<section class="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-700 to-slate-900 text-white">
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-400 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-400 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[90vh] flex items-center justify-center py-20">
+    <div class="text-center max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium mb-8">
+        <span class="text-lg">🌐</span>
+        {t.badge}
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+        {t.title}
+      </h1>
+
+      <p class="text-lg sm:text-xl text-indigo-100 mb-10 max-w-2xl mx-auto leading-relaxed">
+        {t.subtitle}
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a
+          href="#download"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-indigo-700 font-semibold text-lg hover:bg-indigo-50 transition-colors shadow-lg hover:shadow-xl"
+        >
+          {t.ctaPrimary}
+        </a>
+        <a
+          href="#showcase"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-lg hover:bg-white/20 transition-colors"
+        >
+          {t.ctaSecondary}
+        </a>
+      </div>
+
+      <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+        <div class="text-center">
+          <div class="text-3xl sm:text-4xl font-bold mb-1">{t.stat1}</div>
+        </div>
+        <div class="text-center border-x border-white/20">
+          <div class="text-3xl sm:text-4xl font-bold mb-1">{t.stat2}</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl sm:text-4xl font-bold mb-1">{t.stat3}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
