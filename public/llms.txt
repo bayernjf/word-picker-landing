@@ -31,9 +31,9 @@ WordPicker is a free browser extension (Chrome/Edge/Safari) for English learners
 - Code review on GitHub (hover over words in comments/docs)
 - Reading English news (BBC, Reuters)
 
-## Comparison
-- vs Saladict: WordPicker adds cloud wordbook, SRS review, AI definitions, Safari support
-- vs QuillBot: WordPicker adds hover lookup, offline dictionary, SRS review, completely free
+## Comparison with Alternatives
+- vs other lookup extensions: WordPicker adds cloud wordbook, SRS review, AI definitions, Safari support
+- vs online writing tools: WordPicker adds hover lookup, offline dictionary, SRS review, completely free
 
 ## Links
 - GitHub: https://github.com/bayernjf/word-picker

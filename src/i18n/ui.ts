@@ -52,7 +52,7 @@ export const ui = {
     compare: {
       title: '与同类工具对比',
       subtitle: '为什么选择 WordPicker',
-      headers: ['功能', 'WordPicker', '沙拉查词', 'QuillBot'],
+      headers: ['功能', 'WordPicker', '同类查词扩展', '在线写作工具'],
       rows: [
         { feature: '悬停查词', wp: true, competitor1: true, competitor2: false },
         { feature: '云端单词本', wp: true, competitor1: false, competitor2: true },
@@ -137,7 +137,7 @@ export const ui = {
     compare: {
       title: 'Comparison with Alternatives',
       subtitle: 'Why choose WordPicker',
-      headers: ['Feature', 'WordPicker', 'Saladict', 'QuillBot'],
+      headers: ['Feature', 'WordPicker', 'Other Lookup Extensions', 'Online Writing Tools'],
       rows: [
         { feature: 'Hover Lookup', wp: true, competitor1: true, competitor2: false },
         { feature: 'Cloud Wordbook', wp: true, competitor1: false, competitor2: true },
