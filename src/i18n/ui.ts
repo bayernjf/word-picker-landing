@@ -88,6 +88,7 @@ export const ui = {
     footer: {
       desc: '为英语学习者打造的悬停查词浏览器扩展',
       links: { product: '产品', resources: '资源', company: '公司' },
+      legal: { privacy: '隐私政策', terms: '服务条款' },
       copyright: 'WordPicker. 保留所有权利。',
     },
   },
@@ -173,6 +174,7 @@ export const ui = {
     footer: {
       desc: 'A hover-to-lookup browser extension for English learners',
       links: { product: 'Product', resources: 'Resources', company: 'Company' },
+      legal: { privacy: 'Privacy Policy', terms: 'Terms of Service' },
       copyright: 'WordPicker. All rights reserved.',
     },
   },

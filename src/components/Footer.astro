@@ -45,6 +45,10 @@ const homePath = lang === 'zh' ? '/' : '/en';
 
     <div class="mt-12 pt-8 border-t border-slate-800 text-center text-sm">
       <p>© {year} {t.copyright}</p>
+      <div class="mt-3 flex items-center justify-center gap-6">
+        <a href={lang === 'zh' ? '/privacy' : '/en/privacy'} class="hover:text-indigo-400 transition-colors">{t.legal.privacy}</a>
+        <a href={lang === 'zh' ? '/terms' : '/en/terms'} class="hover:text-indigo-400 transition-colors">{t.legal.terms}</a>
+      </div>
     </div>
   </div>
 </footer>
