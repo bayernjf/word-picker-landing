@@ -1,4 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- 外框：圆角矩形，蓝色 -->
   <rect width="100" height="100" rx="20" fill="#4F46E5"/>
-  <text x="50" y="70" font-size="60" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">W</text>
+
+  <!-- 文本行（模拟网页文本） -->
+  <rect x="20" y="28" width="60" height="4" rx="2" fill="white" opacity="0.6"/>
+  <rect x="20" y="40" width="48" height="4" rx="2" fill="white" opacity="0.6"/>
+  <rect x="20" y="52" width="56" height="4" rx="2" fill="white" opacity="0.6"/>
+
+  <!-- 光标拾取：箭头指向第二行文本 -->
+  <path d="M62 42 L78 26 L82 30 L66 46 Z" fill="white"/>
+  <path d="M66 46 L62 42 L58 46 L62 50 Z" fill="white"/>
 </svg>
