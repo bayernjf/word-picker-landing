@@ -51,3 +51,9 @@ word-picker-landing/
 ## 部署
 
 `astro.config.mjs` 中 `site` 配置为 `https://word-picker-landing.pages.dev`,构建产物为纯静态文件(`dist/`),可直接部署到 Cloudflare Pages 或任意静态托管。
+
+## 共享设计包
+
+本仓库使用共享设计包 `@bay/landing-ui`(`github:bayernjf/landing-ui#v1.1.0`):
+- 图标统一走 `@bay/landing-ui/components/Icon.astro`(内联 Lucide SVG,无运行时依赖,替换了原先的 emoji 图标)
+- 包版本以 git tag 管理;升级时改 `package.json` 中的 tag 后重新 `npm install`
