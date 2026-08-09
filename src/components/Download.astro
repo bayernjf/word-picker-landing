@@ -1,5 +1,6 @@
 ---
 import { ui, type Lang } from '../i18n/ui';
+import Icon from '@bay/landing-ui/components/Icon.astro';
 
 interface Props {
   lang: Lang;
@@ -20,14 +21,14 @@ const t = ui[lang].download;
         href="#"
         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-emerald-800 font-semibold text-lg hover:bg-emerald-50 transition-colors shadow-lg"
       >
-        <span class="text-2xl">🌐</span>
+        <Icon name="Globe" size={22} />
         {t.chrome}
       </a>
       <a
         href="#"
         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-lg hover:bg-white/20 transition-colors"
       >
-        <span class="text-2xl">🧭</span>
+        <Icon name="Compass" size={22} />
         {t.safari}
       </a>
       <a
@@ -36,7 +37,7 @@ const t = ui[lang].download;
         rel="noopener noreferrer"
         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-900/50 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg hover:bg-slate-900/70 transition-colors"
       >
-        <span class="text-2xl">⭐</span>
+        <Icon name="Star" size={22} />
         {t.github}
       </a>
     </div>

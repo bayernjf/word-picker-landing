@@ -1,5 +1,6 @@
 ---
 import { ui, type Lang } from '../i18n/ui';
+import Icon from '@bay/landing-ui/components/Icon.astro';
 
 interface Props {
   lang: Lang;
@@ -9,12 +10,12 @@ const { lang } = Astro.props;
 const t = ui[lang].features;
 
 const iconMap: Record<string, string> = {
-  hover: '🖱️',
-  cloud: '☁️',
-  srs: '🔁',
-  ai: '🤖',
-  fireworks: '🎆',
-  offline: '📡',
+  hover: 'MousePointer2',
+  cloud: 'Cloud',
+  srs: 'RefreshCw',
+  ai: 'Brain',
+  fireworks: 'Sparkles',
+  offline: 'WifiOff',
 };
 ---
 
@@ -28,8 +29,8 @@ const iconMap: Record<string, string> = {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {t.items.map((item) => (
         <div class="group bg-white rounded-2xl p-8 border border-slate-200 hover:border-emerald-300 hover:shadow-xl transition-all duration-300">
-          <div class="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
-            {iconMap[item.icon]}
+          <div class="w-14 h-14 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Icon name={iconMap[item.icon]} size={26} />
           </div>
           <h3 class="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
           <p class="text-slate-600 leading-relaxed">{item.desc}</p>
