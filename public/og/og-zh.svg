@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef2ff"/>
+      <stop offset="1" stop-color="#e0e7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="80" y="120" width="660" height="390" rx="24" fill="#ffffff" opacity="0.85"/>
+  <text x="140" y="280" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="72" font-weight="700" fill="#1e1b4b">悬停即可查词</text>
+  <text x="140" y="350" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="30" fill="#4f46e5">WordPicker · 浏览器划词查词与 SRS 复习扩展</text>
+  <rect x="780" y="150" width="340" height="220" rx="16" fill="#ffffff" stroke="#c7d2fe" stroke-width="2"/>
+  <rect x="800" y="175" width="300" height="14" rx="7" fill="#e0e7ff"/>
+  <rect x="800" y="205" width="180" height="14" rx="7" fill="#e0e7ff"/>
+  <rect x="800" y="205" width="90" height="14" rx="7" fill="#fbbf24" opacity="0.9"/>
+  <rect x="800" y="235" width="260" height="14" rx="7" fill="#e0e7ff"/>
+  <rect x="820" y="280" width="280" height="70" rx="12" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="840" y="310" font-family="sans-serif" font-size="20" font-weight="700" fill="#4338ca">hover /ˈhʌv.ər/</text>
+  <text x="840" y="338" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#64748b">v. 悬停；徘徊</text>
+</svg>
