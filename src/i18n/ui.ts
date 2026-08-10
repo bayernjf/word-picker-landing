@@ -1,6 +1,6 @@
 export const languages = {
-  zh: { label: '中文', path: '/' },
-  en: { label: 'English', path: '/en' },
+  zh: { label: '中文', path: '/zh' },
+  en: { label: 'English', path: '/' },
 };
 
 export type Lang = keyof typeof languages;

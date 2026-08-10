@@ -17,8 +17,8 @@ const canonicalUrl = new URL(path, baseUrl).href;
 const ogImage = new URL(lang === 'zh' ? '/og/og-zh.svg' : '/og/og-en.svg', baseUrl).href;
 
 const altPaths = {
-  zh: new URL('/', baseUrl).href,
-  en: new URL('/en', baseUrl).href,
+  zh: new URL('/zh', baseUrl).href,
+  en: new URL('/', baseUrl).href,
 };
 
 const faqItems = ui[lang].faq.items;
@@ -67,7 +67,7 @@ const faqSchema = {
 
     <link rel="alternate" hreflang="zh" href={altPaths.zh} />
     <link rel="alternate" hreflang="en" href={altPaths.en} />
-    <link rel="alternate" hreflang="x-default" href={altPaths.zh} />
+    <link rel="alternate" hreflang="x-default" href={altPaths.en} />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
