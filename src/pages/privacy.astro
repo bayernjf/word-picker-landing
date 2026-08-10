@@ -4,62 +4,61 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { ui } from '../i18n/ui';
 
-const lang = 'zh';
+const lang = 'en';
 const t = ui[lang];
 ---
 
-<Base lang={lang} title="隐私政策 | WordPicker" description="WordPicker 隐私政策：扩展与官网如何处理你的信息。">
+<Base lang={lang} title="Privacy Policy | WordPicker" description="WordPicker Privacy Policy: how the extension and this site handle your information.">
   <Header lang={lang} />
   <main class="py-16 sm:py-24">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <h1 class="text-3xl font-bold text-white sm:text-4xl">{t.footer.legal.privacy}</h1>
-      <p class="mt-3 text-sm text-slate-500">最后更新：2026 年 8 月 7 日</p>
+      <p class="mt-3 text-sm text-slate-500">Last updated: August 7, 2026</p>
 
       <div class="mt-10 space-y-8 text-sm leading-7 text-slate-400">
         <section>
-          <h2 class="text-lg font-semibold text-white">1. 概述</h2>
+          <h2 class="text-lg font-semibold text-white">1. Overview</h2>
           <p class="mt-2">
-            WordPicker 是一款悬停查词浏览器扩展，本站是其产品介绍站点。我们尊重并保护用户隐私，本政策说明扩展与官网如何处理你的信息。
+            WordPicker is a hover-to-look-up browser extension; this site introduces the product. We respect and protect user privacy. This policy explains how the extension and the site handle your information.
           </p>
         </section>
 
         <section>
-          <h2 class="text-lg font-semibold text-white">2. 扩展数据</h2>
+          <h2 class="text-lg font-semibold text-white">2. Extension Data</h2>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>查询过的单词与生词本数据默认保存在你浏览器的本地存储中，不会上传到我们的服务器。</li>
-            <li>如启用云端词库同步功能，相关数据仅用于在你的设备之间同步，不会用于其他目的。</li>
-            <li>扩展不收集浏览历史、页面正文等与查词无关的数据。</li>
+            <li>Looked-up words and your wordbook are stored in your browser's local storage by default and are not uploaded to our servers.</li>
+            <li>If cloud wordbook sync is enabled, the data is used solely to sync between your devices.</li>
+            <li>The extension does not collect browsing history, page content, or any data unrelated to word lookup.</li>
           </ul>
         </section>
 
         <section>
-          <h2 class="text-lg font-semibold text-white">3. 官网信息</h2>
+          <h2 class="text-lg font-semibold text-white">3. This Website</h2>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>本站为静态站点，不提供账号注册，不主动收集姓名、邮箱等个人身份信息。</li>
-            <li>托管平台（Cloudflare Pages）可能按其自身政策记录基础访问日志，该过程不受本站控制。</li>
+            <li>The site is static, offers no account registration, and does not actively collect personally identifiable information.</li>
+            <li>The hosting platform (Cloudflare Pages) may record basic access logs under its own policies, outside our control.</li>
           </ul>
         </section>
 
         <section>
-          <h2 class="text-lg font-semibold text-white">4. Cookie 与本地存储</h2>
+          <h2 class="text-lg font-semibold text-white">4. Cookies & Local Storage</h2>
           <p class="mt-2">
-            本站可能使用 Cookie 或 localStorage 保存语言偏好等界面设置，仅用于改善浏览体验，不用于跨站追踪。
+            The site may use cookies or localStorage to remember interface preferences such as language, solely to improve browsing and never for cross-site tracking.
           </p>
         </section>
 
         <section>
-          <h2 class="text-lg font-semibold text-white">5. 第三方链接</h2>
+          <h2 class="text-lg font-semibold text-white">5. Third-Party Links</h2>
           <p class="mt-2">
-            本站包含指向浏览器扩展商店与 GitHub 等第三方网站的链接，其隐私实践以各自政策为准。
+            The site links to browser extension stores and GitHub; their privacy practices are governed by their own policies.
           </p>
         </section>
 
         <section>
-          <h2 class="text-lg font-semibold text-white">6. 变更与联系</h2>
+          <h2 class="text-lg font-semibold text-white">6. Changes & Contact</h2>
           <p class="mt-2">
-            本政策可能随产品演进更新，变更将在本页发布。如有疑问，请通过
-            <a href="https://github.com/bayernjf/word-picker" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300">GitHub 仓库</a>
-            的 Issues 与我们联系。
+            This policy may be updated as the product evolves; changes will be posted here. Questions can be raised via Issues on our
+            <a href="https://github.com/bayernjf/word-picker" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300">GitHub repository</a>.
           </p>
         </section>
       </div>
