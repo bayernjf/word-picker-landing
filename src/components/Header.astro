@@ -1,5 +1,6 @@
 ---
 import BayjfLink from '@bay/landing-ui/components/BayjfLink.astro';
+import StarOnGithub from '@bay/landing-ui/components/StarOnGithub.astro';
 import { ui, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -54,6 +55,7 @@ const otherLangPath = otherLang === 'zh' ? '/zh' : '/';
           {otherLang === 'zh' ? '中文' : 'English'}
         </a>
         <BayjfLink size={18} class="hidden text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors px-3 py-2 rounded-lg hover:bg-slate-100 sm:inline-flex" />
+        <StarOnGithub href="https://github.com/bayernjf/word-picker" size={15} class="hidden text-slate-600 sm:inline-flex" />
         <a
           href="#download"
           class="hidden sm:inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors"
@@ -69,6 +71,7 @@ const otherLangPath = otherLang === 'zh' ? '/zh' : '/';
       <a href="#showcase" class="text-xs font-medium text-slate-600 hover:text-indigo-600">{t.nav.showcase}</a>
       <a href="#faq" class="text-xs font-medium text-slate-600 hover:text-indigo-600">{t.nav.faq}</a>
       <BayjfLink size={18} class="text-xs font-medium text-slate-600 hover:text-indigo-600" />
+      <StarOnGithub href="https://github.com/bayernjf/word-picker" size={15} class="text-slate-600" />
     </nav>
   </div>
 </header>
