@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://word-picker-landing.pages.dev',
+  site: 'https://word-picker.bayjf.com',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

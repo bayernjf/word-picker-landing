@@ -11,7 +11,7 @@ interface Props {
 
 const { title, description, lang, keywords } = Astro.props;
 
-const baseUrl = 'https://word-picker-landing.pages.dev';
+const baseUrl = 'https://word-picker.bayjf.com';
 const path = Astro.url.pathname;
 const canonicalUrl = new URL(path, baseUrl).href;
 const ogImage = new URL(lang === 'zh' ? '/og/og-zh.svg' : '/og/og-en.svg', baseUrl).href;
