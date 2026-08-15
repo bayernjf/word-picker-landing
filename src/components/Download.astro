@@ -1,6 +1,7 @@
 ---
 import { ui, type Lang } from '../i18n/ui';
 import Icon from '@bay/landing-ui/components/Icon.astro';
+import { releasesUrl } from '@bay/landing-ui/lib/releases';
 
 interface Props {
   lang: Lang;
@@ -8,6 +9,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = ui[lang].download;
+const fallbackUrl = releasesUrl('bayernjf/word-picker');
 ---
 
 <section id="download" class="py-24 bg-gradient-to-br from-emerald-900 via-slate-900 to-slate-950 text-white relative overflow-hidden">
@@ -18,14 +20,20 @@ const t = ui[lang].download;
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a
-        href="#"
+        data-download-chrome
+        href={fallbackUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-emerald-800 font-semibold text-lg hover:bg-emerald-50 transition-colors shadow-lg"
       >
         <Icon name="Globe" size={22} />
         {t.chrome}
       </a>
       <a
-        href="#"
+        data-download-safari
+        href={fallbackUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold text-lg hover:bg-white/20 transition-colors"
       >
         <Icon name="Compass" size={22} />
@@ -41,5 +49,45 @@ const t = ui[lang].download;
         {t.github}
       </a>
     </div>
+
+    <p data-download-version class="mt-6 hidden text-sm text-emerald-100/60"></p>
   </div>
 </section>
+
+<script>
+  import { fetchLatestAssets, formatBytes, isSafari } from '@bay/landing-ui/lib/releases';
+
+  // 两套配色整体互换，而不是给命中的按钮叠加高亮 —— 否则访客自己浏览器那个按钮
+  // 仍然是视觉上更弱的一个
+  const PRIMARY = ['bg-white', 'text-emerald-800', 'hover:bg-emerald-50', 'shadow-lg'];
+  const SECONDARY = ['bg-white/10', 'backdrop-blur-sm', 'border', 'border-white/30', 'text-white', 'hover:bg-white/20'];
+
+  function setEmphasis(el: Element, primary: boolean) {
+    el.classList.remove(...(primary ? SECONDARY : PRIMARY));
+    el.classList.add(...(primary ? PRIMARY : SECONDARY));
+  }
+
+  const { assets, version } = await fetchLatestAssets('bayernjf/word-picker', {
+    chrome: 'chrome.zip',
+    safari: 'safari.zip',
+  });
+
+  for (const [key, asset] of Object.entries(assets)) {
+    if (!asset) continue;
+    document.querySelectorAll(`[data-download-${key}]`).forEach((el) => {
+      el.setAttribute('href', asset.url);
+      el.setAttribute('title', formatBytes(asset.size));
+    });
+  }
+
+  const preferSafari = isSafari();
+  document.querySelectorAll('[data-download-chrome]').forEach((el) => setEmphasis(el, !preferSafari));
+  document.querySelectorAll('[data-download-safari]').forEach((el) => setEmphasis(el, preferSafari));
+
+  if (version) {
+    document.querySelectorAll('[data-download-version]').forEach((el) => {
+      el.textContent = version;
+      el.classList.remove('hidden');
+    });
+  }
+</script>
